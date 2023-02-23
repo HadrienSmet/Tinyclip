@@ -1,0 +1,14 @@
+:root {
+    --hue: 300;
+    --saturation: 50%;
+    --foreground-color: hsl(var(--hue), var(--saturation), 75%);
+    --background-color: hsl(var(--hue), var(--saturation), 20%);
+}
+
+$bg-clr-1: rgb(16, 16, 16);
+$bg-clr-2: rgba(140, 140, 140, 0.1);
+$bg-clr-3: rgba(140, 140, 140, 0.3);
+$bg-clr-4: rgb(39, 36, 36);
+
+$clr-1: rgb(144, 144, 144);
+$clr-2: rgb(243, 209, 56);

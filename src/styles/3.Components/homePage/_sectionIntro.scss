@@ -1,0 +1,17 @@
+.intro {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-family: "main-fonts";
+        font-size: 10vh;
+    }
+    .bg-circle {
+        position: absolute;
+        height: 28vh;
+        width: 28vh;
+        border-radius: 50%;
+        background-color: $bg-clr-2;
+    }
+}

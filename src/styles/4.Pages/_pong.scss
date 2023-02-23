@@ -1,0 +1,54 @@
+.pong {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    overflow: hidden;
+    cursor: none;
+    height: calc(100vh - 100px);
+    width: 100%;
+    .paddle {
+        --position: 50;
+        position: absolute;
+        background-color: var(--foreground-color);
+        width: 1vh;
+        height: 10vh;
+        top: calc(var(--position) * 1vh);
+        transform: translateY(-50%);
+        &.right {
+            right: 1vw;
+        }
+        &.left {
+            left: 1vw;
+        }
+    }
+    .ball {
+        --x: 50;
+        --y: 50;
+        position: absolute;
+        left: calc(var(--x) * 1vw);
+        top: calc(var(--y) * 1vh);
+        background-color: var(--foreground-color);
+        transform: translate(-50%, 50%);
+        width: 2.5vh;
+        height: 2.5vh;
+        border-radius: 50%;
+    }
+    .score {
+        display: flex;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 7vh;
+        color: var(--foreground-color);
+        > * {
+            flex-grow: 1;
+            flex-basis: 0;
+            padding: 0 2vh;
+            margin: 1vh 0;
+            opacity: 0.5;
+        }
+        > :first-child {
+            text-align: right;
+            border-right: 0.5vh solid var(--foreground-color);
+        }
+    }
+}

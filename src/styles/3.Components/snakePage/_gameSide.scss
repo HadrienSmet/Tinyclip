@@ -1,0 +1,9 @@
+.game-side {
+    .score-row {
+        display: flex;
+        gap: 50px;
+        width: 100%;
+        color: $clr-1;
+        font-family: "txt-fonts";
+    }
+}

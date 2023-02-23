@@ -1,0 +1,16 @@
+.flappy-bird__header {
+    margin: 0 auto;
+    width: 431px;
+    h1 {
+        background: url(../assets/flappy-bird-set.png) 0% 340px;
+        padding: 1.2rem 0;
+        margin: 0;
+        font-family: "txt-fonts";
+    }
+    .score-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 6px;
+        background: #5ee270;
+    }
+}

@@ -1,0 +1,12 @@
+header {
+    background-color: $bg-clr-2;
+    padding: 0 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+        font-size: 1.5em;
+        font-family: "main-fonts";
+    }
+}

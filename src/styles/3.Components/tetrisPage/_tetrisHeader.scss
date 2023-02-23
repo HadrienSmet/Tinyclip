@@ -1,0 +1,27 @@
+.tetris {
+    &__header {
+        position: relative;
+        // width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3 {
+            font-family: "txt-fonts";
+            text-transform: uppercase;
+            color: $clr-1;
+        }
+        button {
+            background-color: transparent;
+            font-family: "txt-fonts";
+            padding: 5px 15px;
+            color: $clr-2;
+            border: 2px solid $clr-2;
+        }
+    }
+    &__score-container {
+        // width: 100%;
+        display: flex;
+        // justify-content: space-between;
+        gap: 200px;
+    }
+}
