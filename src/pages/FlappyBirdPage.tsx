@@ -9,8 +9,8 @@ type PlayingHookType = {
 };
 
 const storedObj = JSON.parse(localStorage.getItem("flappy best") || "0");
-const img = new Image();
-img.src = setupImg;
+// const img = new Image();
+// img.src = setupImg;
 
 let isPlaying = false;
 const gravity = 0.5;
@@ -62,6 +62,8 @@ const useFlappy = (canvasRef: MutableRefObject<HTMLCanvasElement | null>) => {
     };
 
     useEffect(() => {
+        console.log(canvasRef);
+
         setup();
 
         document.addEventListener("click", () => (isPlaying = true));
@@ -85,9 +87,11 @@ const useFlappyPlaying = ({
     handleScore,
     handleLose,
 }: PlayingHookType) => {
+    const img = new Image();
+    img.src = setupImg;
     let ctx: CanvasRenderingContext2D | null;
     const drawFirstBackground = (ctx: CanvasRenderingContext2D | null) => {
-        ctx?.drawImage(
+        ctx!.drawImage(
             img,
             0,
             0,
@@ -101,7 +105,7 @@ const useFlappyPlaying = ({
         );
     };
     const drawScdBackground = (ctx: CanvasRenderingContext2D | null) => {
-        ctx?.drawImage(
+        ctx!.drawImage(
             img,
             0,
             0,
@@ -117,7 +121,7 @@ const useFlappyPlaying = ({
         ctx: CanvasRenderingContext2D | null,
         cTenth: number
     ) => {
-        ctx?.drawImage(
+        ctx!.drawImage(
             img,
             432,
             Math.floor((index % 9) / 3) * size[1],
@@ -133,7 +137,7 @@ const useFlappyPlaying = ({
         );
     };
     const drawBirdUnplaying = (ctx: CanvasRenderingContext2D | null) => {
-        ctx?.drawImage(
+        ctx!.drawImage(
             img,
             432,
             Math.floor((index % 9) / 3) * size[1],
@@ -151,7 +155,7 @@ const useFlappyPlaying = ({
         pipe: [number, number],
         ctx: CanvasRenderingContext2D | null
     ) => {
-        ctx?.drawImage(
+        ctx!.drawImage(
             img,
             432,
             588 - pipe[1],
@@ -167,7 +171,7 @@ const useFlappyPlaying = ({
         pipe: [number, number],
         ctx: CanvasRenderingContext2D | null
     ) => {
-        ctx?.drawImage(
+        ctx!.drawImage(
             img,
             432 + pipeWidth,
             108,
@@ -184,8 +188,12 @@ const useFlappyPlaying = ({
         if (canvasRef.current) {
             const cTenth = canvasRef.current.width / 10;
             ctx = canvasRef.current.getContext("2d");
+            console.log(ctx);
+
             flyHeight = canvasRef.current.height / 2 - size[1] / 2;
             if (ctx) {
+                console.log("render is called");
+
                 const render = () => {
                     index++;
                     drawFirstBackground(ctx);
@@ -219,13 +227,15 @@ const useFlappyPlaying = ({
                     }
                     window.requestAnimationFrame(render);
                 };
+                console.log("render is call on load");
+
                 img.onload = render;
             }
         }
-    }, [isPlaying]);
+    }, [isPlaying, canvasRef.current]);
 };
 
-const App = () => {
+const flappyBirdPage = () => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const { scoreRef, handleScore, handleLose } = useFlappy(canvasRef);
     useFlappyPlaying({ canvasRef, handleLose, handleScore });
@@ -247,4 +257,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default flappyBirdPage;

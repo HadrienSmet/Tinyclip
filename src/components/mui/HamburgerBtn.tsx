@@ -1,8 +1,15 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const HamburgerBtn = () => {
+    let navigation: HTMLElement | null;
     const buttonRef = useRef<HTMLButtonElement | null>(null);
+
+    useEffect(() => {
+        navigation = document.querySelector("nav");
+    }, []);
+
     const handleButton = () => {
+        navigation!.classList.toggle("opened");
         buttonRef.current?.classList.toggle("opened");
         buttonRef.current?.setAttribute(
             "aria-expanded",
@@ -14,7 +21,7 @@ const HamburgerBtn = () => {
         <button
             ref={buttonRef}
             className="menu"
-            onClick={handleButton}
+            onClick={() => handleButton()}
             aria-label="Main Menu"
         >
             <svg width="100" height="100" viewBox="0 0 100 100">

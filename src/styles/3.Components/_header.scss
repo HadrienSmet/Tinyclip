@@ -1,6 +1,20 @@
+@media screen and (min-width: 1025px) {
+    header {
+        padding: 0 80px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 0 40px;
+    }
+}
+
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     background-color: $bg-clr-2;
-    padding: 0 80px;
     width: 100%;
     display: flex;
     align-items: center;

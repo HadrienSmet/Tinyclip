@@ -5,6 +5,7 @@ import SnakePage from "./pages/SnakePage";
 import TetrisPage from "./pages/TetrisPage";
 import FlappyBirdPage from "./pages/FlappyBirdPage";
 import PongPage from "./pages/PongPage";
+import Navigation from "./components/Navigation";
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                     <Route path="/snake" element={<SnakePage />} />
                     <Route path="/tetris" element={<TetrisPage />} />
                 </Routes>
+                <Navigation />
             </Router>
         </div>
     );

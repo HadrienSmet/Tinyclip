@@ -1,0 +1,90 @@
+@media screen and (min-width: 768px) {
+    nav ul li {
+        font-size: 10vh;
+    }
+}
+@media screen and (max-width: 767px) {
+    nav ul li {
+        font-size: 2em;
+    }
+}
+
+nav {
+    background-color: $bg-clr-2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.25s ease-in-out;
+    transform: translateY(-100%);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &.opened {
+        transform: translateY(0);
+    }
+    ul {
+        position: relative;
+        width: 60vw;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        li {
+            position: relative;
+            font-family: "txt-fonts";
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            z-index: 2;
+            color: $clr-1;
+            transition: 0.3s ease-in;
+            cursor: pointer;
+            &:hover {
+                color: $clr-2 !important;
+                &::after,
+                &::before {
+                    transform: scaleX(1);
+                }
+                a {
+                    color: $clr-2 !important;
+                }
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                height: 110%;
+                width: 95%;
+                left: 0;
+                top: 0;
+                background-color: $bg-clr-1;
+                z-index: -1;
+                transition: 0.2s ease-out;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                height: 110%;
+                right: 0;
+                bottom: 0;
+                width: 95%;
+                background-color: $clr-1;
+                z-index: -1;
+                transition: 0.3s ease-out;
+                transform: scaleX(0);
+                transform-origin: right;
+            }
+            a {
+                color: $clr-1;
+            }
+        }
+    }
+}

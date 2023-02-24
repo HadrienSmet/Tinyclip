@@ -1,4 +1,11 @@
 @import "../2.Utils/variables";
+
+@media screen and (min-width: 1025px) {
+    body {
+        overflow: hidden;
+    }
+}
+
 *,
 *::after,
 *::before {
@@ -10,11 +17,13 @@ body {
     background-color: $bg-clr-1;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
 }
 h1 {
     font-family: "main-fonts";
 }
 a {
     text-decoration: none;
+}
+ul {
+    list-style: none;
 }
