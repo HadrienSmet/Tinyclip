@@ -19,6 +19,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    &.opened {
+        z-index: 30000;
+    }
     span {
         font-size: 1.5em;
         font-family: "main-fonts";

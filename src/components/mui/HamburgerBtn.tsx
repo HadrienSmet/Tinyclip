@@ -2,14 +2,17 @@ import { useEffect, useRef } from "react";
 
 const HamburgerBtn = () => {
     let navigation: HTMLElement | null;
+    let header: HTMLElement | null;
     const buttonRef = useRef<HTMLButtonElement | null>(null);
 
     useEffect(() => {
         navigation = document.querySelector("nav");
+        header = document.querySelector("header");
     }, []);
 
     const handleButton = () => {
         navigation!.classList.toggle("opened");
+        header!.classList.toggle("opened");
         buttonRef.current?.classList.toggle("opened");
         buttonRef.current?.setAttribute(
             "aria-expanded",

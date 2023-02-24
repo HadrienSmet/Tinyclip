@@ -3,10 +3,12 @@ import { MutableRefObject, useEffect, useRef } from "react";
 
 const useNavigation = () => {
     let defBar: Element | null;
+    // let header: Element | null;
     let button: Element | null;
     useEffect(() => {
         defBar = document.querySelector("header");
         button = document.querySelector(".menu");
+        // header = document.querySelector(".menu");
     }, []);
     const navigationRef = useRef() as MutableRefObject<HTMLDivElement>;
 
