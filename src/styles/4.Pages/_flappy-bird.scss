@@ -1,6 +1,9 @@
 .flappy-bird {
-    position: relative;
-    transform: translateY(-80px);
+    z-index: 10000;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0;
     text-align: center;
     user-select: none;
