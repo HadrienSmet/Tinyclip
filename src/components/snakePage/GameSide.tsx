@@ -110,8 +110,6 @@ const useSnakeGame = () => {
         if (newHead.x === food.x && newHead.y === food.y) {
             score++;
             const foodPos: ElementPosition | null = foodGenerator();
-            console.log(foodPos);
-
             if (foodPos) setFood(foodPos);
         } else {
             snake.pop();

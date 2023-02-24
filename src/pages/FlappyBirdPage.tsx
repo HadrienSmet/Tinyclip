@@ -9,8 +9,6 @@ type PlayingHookType = {
 };
 
 const storedObj = JSON.parse(localStorage.getItem("flappy best") || "0");
-// const img = new Image();
-// img.src = setupImg;
 
 let isPlaying = false;
 const gravity = 0.5;
@@ -62,8 +60,6 @@ const useFlappy = (canvasRef: MutableRefObject<HTMLCanvasElement | null>) => {
     };
 
     useEffect(() => {
-        console.log(canvasRef);
-
         setup();
 
         document.addEventListener("click", () => (isPlaying = true));
@@ -188,12 +184,8 @@ const useFlappyPlaying = ({
         if (canvasRef.current) {
             const cTenth = canvasRef.current.width / 10;
             ctx = canvasRef.current.getContext("2d");
-            console.log(ctx);
-
             flyHeight = canvasRef.current.height / 2 - size[1] / 2;
             if (ctx) {
-                console.log("render is called");
-
                 const render = () => {
                     index++;
                     drawFirstBackground(ctx);
@@ -227,8 +219,6 @@ const useFlappyPlaying = ({
                     }
                     window.requestAnimationFrame(render);
                 };
-                console.log("render is call on load");
-
                 img.onload = render;
             }
         }

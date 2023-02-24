@@ -34,10 +34,6 @@ const SectionGames = () => {
                         importedImg={game.importedImg}
                     />
                 ))}
-                {/* <GameCard gameName="snake" importedImg={snakeImg} />
-                <GameCard gameName="pong" importedImg={pongImg} />
-                <GameCard gameName="tetris" importedImg={tetrisImg} />
-                <GameCard gameName="flappy-bird" importedImg={flappyImg} /> */}
             </div>
         </section>
     );
