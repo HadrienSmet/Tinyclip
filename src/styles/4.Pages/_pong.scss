@@ -1,10 +1,12 @@
 .pong {
     margin: 0;
     padding: 0;
+    padding-top: 100px;
     background-color: var(--background-color);
     overflow: hidden;
     cursor: none;
-    height: calc(100vh - 100px);
+    height: 100vh;
+    height: 100svh;
     width: 100%;
     .paddle {
         --position: 50;

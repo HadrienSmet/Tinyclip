@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import HamburgerBtn from "./mui/HamburgerBtn";
 
 const Header = () => {
     return (
         <header>
-            <span>Tinyclip</span>
+            <Link to="/">
+                <span>Tinyclip</span>
+            </Link>
             <HamburgerBtn />
         </header>
     );
