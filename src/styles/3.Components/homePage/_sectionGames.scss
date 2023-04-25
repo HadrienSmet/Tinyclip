@@ -31,11 +31,22 @@
     gap: 15px;
     h2 {
         font-family: "main-fonts";
+        opacity: 0;
+        transform: translateX(-200%);
+        animation: titleAnim 0.2s 2.3s ease-in forwards;
     }
     &-container {
         position: relative;
         width: 100%;
         display: grid;
         gap: 25px;
+        @for $i from 1 through 4 {
+            > div:nth-child(#{$i}) {
+                transform: translateX(-500%);
+                opacity: 0;
+                animation: gameAnim 0.35s ease-in forwards;
+                animation-delay: (4 - $i * 0.2s) - 0.5;
+            }
+        }
     }
 }

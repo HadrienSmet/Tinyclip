@@ -19,6 +19,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transform: translateY(-100%);
+    animation: translateDown 0.3s 1.9s ease-in-out forwards;
     &.opened {
         z-index: 30000;
     }
